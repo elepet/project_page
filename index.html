@@ -11,14 +11,13 @@
       function changeColour()
       {
         var movingText = document.getElementById('toChange');
-        var letterArr = ['A','B','C','D','E','F'];
-        var numberArr = ['0','1','2','3','4','5','6','7','8','9'];
-        movingText.style.color = letterArr[getRandomInt(6)] + 
-        letterArr[getRandomInt(6)] + 
-        numberArr[getRandomInt(10)] +
-        numberArr[getRandomInt(10)] +
-        numberArr[getRandomInt(10)] +
-        numberArr[getRandomInt(10)];
+        var hexArr = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+        movingText.style.color = hexArr[getRandomInt(16)] + 
+        hexArr[getRandomInt(16)] + 
+        hexArr[getRandomInt(16)] +
+        hexArr[getRandomInt(16)] +
+        hexArr[getRandomInt(16)] +
+        hexArr[getRandomInt(16)];
       }
     </script>
   </head>
@@ -30,11 +29,13 @@
         <hr>
         <p>This website is a record of the personal projects that I have undertaken in the past few years. Each project has a dedicated page, which are linked below in order of newest to oldest.</p>
         <ul>
-          <li><a href="page1.html">First 3D Game in Unity (GottaFish)</a></li>
-          <li>Tea</li>
-          <li>Milk</li>
+          <li><a href="page1.html">10/24: First 3D Game in Unity (GottaFish)</a></li>
         </ul>
         <p>Also, try catching the fish!</p>
     </main>
+    <footer>
+      <hr>
+      <p>© 2024 Lev K.</p>
+    </footer>
   </body>
 </html>
