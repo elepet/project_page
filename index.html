@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Lev's Project Page</title>
-    <link rel="icon" type="image/x-icon" href="fish.png">
+    <link rel="icon" type="image/x-icon" href="movingFish.gif">
     <link rel="stylesheet" href="styles.css">
     <script>
       function getRandomInt(max)
@@ -10,7 +10,7 @@
       }
       function changeColour()
       {
-        var movingText = document.getElementById('movingText');
+        var movingText = document.getElementById('toChange');
         var letterArr = ['A','B','C','D','E','F'];
         var numberArr = ['0','1','2','3','4','5','6','7','8','9'];
         movingText.style.color = letterArr[getRandomInt(6)] + 
@@ -24,22 +24,17 @@
   </head>
   <body>
     <main>
-        <h1>Welcome to My Project Page</h1>
+        <h1 id="toChange">Welcome to My Project Page</h1>
         <hr>
-        <marquee direction="right" id="movingText">MOVING TEXT!</marquee>
+        <marquee direction="right" scrollamount="9" behavior="alternate"><img src="movingFish.gif" height="50" width="50" onclick="changeColour()" ></marquee>
         <hr>
-        <p>So far there's nothing here. In the meantime, take a look at these cool html features. <a href="page1.html">Just a link.</a></p>
-        <img src="fish.png" height="100" width="100">
-        <br>
-        <br>
-        <kbd>Imagine this is some computer code.</kbd>
-        <br>
-        <br>
-        <details>
-          <summary>Accordion.</summary>
-          <br>
-          <input type="button" value="Button!" onclick="changeColour()"/>
-        </details>
+        <p>This website is a record of the personal projects that I have undertaken in the past few years. Each project has a dedicated page, which are linked below in order of newest to oldest.</p>
+        <ul>
+          <li><a href="page1.html">First 3D Game in Unity (GottaFish)</a></li>
+          <li>Tea</li>
+          <li>Milk</li>
+        </ul>
+        <p>Also, try catching the fish!</p>
     </main>
   </body>
 </html>
