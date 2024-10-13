@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>Lev's Project Page</title>
+    <link rel="icon" type="image/x-icon" href="../images/movingFish.gif">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main>
+        <h1>Auto-generated Anki Deck</h1>
+        <hr>
+        <div class="returnToHome"><a href="index.html">Return to Home</a></div>
+        <div class="previousNext"><a href="page0.html">< Previous</a>&nbsp;&nbsp;&nbsp;<a href="page1.html">Next ></a></div>
+        <br>
+        <div class="imageAndCaption">
+            <img src="../images/ankiStats.png"/>
+            <div class="caption">Roughly 7K cards were added automatically.</div>
+        </div>
+        <p>This was my first independent coding project. I was learning Japanese and using a flashcard software called 'Anki' to help remember words I found. The problem was that making each card manually took on average 2 minutes (I timed this), and since I needed several thousand of these if I wanted to reach fluency, making these would take me several hundred hours. Specifically, I was aiming for 10k, and I was at 3K at the time, so 7K*2/60 = ~230 hours.</p>
+        <p>To ease this process, I wrote a Python program that would automatically generate cards in the format that I wanted based on a list of 10K words sorted by frequency. It would connect to the public APIs of an online Japanese dictionary and an example sentence website, retrieve data on a particular word, parse it, then print it into a csv file. Anki would then read the csv file and generate the cards.</p>
+        <p>The program took several hours to execute and crashed multiple times, so it was not really optimally written, but it got the job done. Python was probably not the best language to use as it is interpreted and hence slow.</p>
+        <p>What I learnt:</p>
+        <ul>
+            <li>Python: basics, how to open files, how to write to files, how to interact with JSON.</li>
+            <li>APIs: what they are and how to interact with them, what a JSON is.</li>
+        </ul>
+        <div class="imageAndCaption">
+          <img src="../images/ankiStyle.png"/>
+          <div class="caption">The specific format of each card required scraping data from multiple online sources.</div>
+        </div>
+        <br>
+    </main>
+  </body>
+</html>

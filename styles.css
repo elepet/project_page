@@ -23,6 +23,41 @@ body {
   marquee {
     font-size: 22px;
     font-weight: bold;
-    cursor: url('grab.png'), auto;
+    cursor: url('images/grab.png'), auto;
+  }
+  div.previousNext {
+    position: absolute;
+    top: 95px;
+    right: 10px;
+  }
+  div.returnToHome {
+    position: absolute;
+    top: 95px;
+    left: 10px;
+  }
+  div.imageAndCaption {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+  div.imageAndCaption img {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 400px;
+  }
+  div.imageAndCaption iframe {
+    display: block;
+    margin: auto;
+    width: 600px;
+    height: 400px;
+  }
+  div.caption {
+    display: block;
+    padding-top: 2%;
+    text-align: center;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 14;
   }
     

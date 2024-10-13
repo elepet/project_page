@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lev's Project Page</title>
+    <link rel="icon" type="image/x-icon" href="../images/movingFish.gif">
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+      function getRandomInt(max)
+      {
+        return Math.floor(Math.random() * max);
+      }
+      function changeColour() {
+          const movingText = document.getElementById("toChange");
+          const hexArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+          let color = "#"; // Start with the '#' for a hex color code
+          for (let i = 0; i < 6; i++) {
+              color += hexArr[getRandomInt(16)];
+          }
+          movingText.style.color = color;
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+        <h1 id="toChange">Welcome to My Project Page</h1>
+        <hr>
+        <marquee direction="right" scrollamount="9" behavior="alternate"><img src="../images/movingFish.gif" height="50" width="50" onclick="changeColour()" ></marquee>
+        <hr>
+        <p>This website is a record of the personal projects that I have undertaken in the past few years. Each project has a dedicated page, which are linked below in order of newest to oldest.</p>
+        <ul>
+          <li><a href="page1.html">10/24: First 3D Game in Unity (GottaFish)</a></li>
+          <li><a href="page0.html">8/23: Auto-generated Anki Deck</a></li>
+        </ul>
+        <p>Also, try catching the fish!</p>
+    </main>
+  </body>
+</html>
