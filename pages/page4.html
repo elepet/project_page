@@ -32,13 +32,13 @@
     while (Q is not empty)
         x,y = 1st pair in Q
         pop 1st pair in Q
-        if(point at x+1 invalid)
+        if(point at x+1 valid)
             gridArray[x+1][y] = new colour, push x+1,y to Q
-        if(point at x-1 invalid)
+        if(point at x-1 valid)
             gridArray[x-1][y] = new colour, push x-1,y to Q
-        if(point at y+1 invalid)
+        if(point at y+1 valid)
             gridArray[y+1][y] = new colour, push x,y+1 to Q
-        if(point at y-1 invalid)
+        if(point at y-1 valid)
             gridArray[y-1][y] = new colour, push x,y-1 to Q
     return
 </code></pre>
