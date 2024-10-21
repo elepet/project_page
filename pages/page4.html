@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lev's Project Page</title>
+    <link rel="icon" type="image/x-icon" href="../images/movingFish.gif">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main>
+        <h1>SFML C++ Flood-Fill Algorithm</h1>
+        <hr>
+        <div class="returnToHome"><a href="../index.html">Return to Home</a></div>
+        <div class="previousNext"><a href="page3.html">< Previous</a>&nbsp;&nbsp;&nbsp;<a href="page4.html">Next ></a></div>
+        <br>
+        <p>For this project, I wanted to try implementing an algorithm with visual applications. After some researching, I found 'flood-fill', which is an algorithm that takes a starting point in a grid, checks its surrounding points, and alters an attribute of these points if certain conditions are met. Most often, this is seen in the bucket tool, which recolours a solid-colour region.</p>
+        <p>This algorithm could be implemented with a recursive function, moving to a new point until it reaches an edge or a different colour. Something like this:</p>
+        <pre><code>recursiveFunciton(gridArray,x,y)
+    if (at edge OR at different colour OR at new colour) return //if invalid, return
+    gridArray[x][y] = new colour //from old colour
+    recursiveFunciton(gridArray,x+1,y)
+    recursiveFunciton(gridArray,x,y+1)
+    recursiveFunciton(gridArray,x-1,y)
+    recursiveFunciton(gridArray,x,y-1)
+    return</code></pre>
+        <p>This is an example of Depth-First Search, as it first goes down to the deepest valid point in one chain of recursions, then retraces. However, this may lead to 'stack overflow', which as I understand it is when too many subroutines (functions) are running and the memory used to manage their order of execution fills up. It could alternatively be implemented by a data structure that stores these points instead of passing them around between functions, avoiding this problem.</p> 
+        <p> One common implementation uses a stack, which is a data structure that basically does the same thing as the above implementation, storing entries on a first-in last-out basis (DFS). The other uses a queue, which stores entries on a first-in first-out basis. This is an example of Breadth-First Search, as all of the points on one depth level (here, this is distance from the starting point) are added and processed first, then all of those on the second level, etc. The latter is the one that I went with, and the pseudocode is as follows. I had to make the modify this so that the while loop would run once per frame, as otherwise it would be too fast to see.</p>
+        <pre><code>queueFill(gridArray,x,y)
+    declare queue of pairs Q
+    if (at edge OR at different colour OR at new colour) return
+    gridArray[x][y] = new colour
+    push x,y to Q
+    while (Q is not empty)
+        x,y = 1st pair in Q
+        pop 1st pair in Q
+        if(point at x+1 invalid)
+            gridArray[x+1][y] = new colour, push x+1,y to Q
+        if(point at x-1 invalid)
+            gridArray[x-1][y] = new colour, push x-1,y to Q
+        if(point at y+1 invalid)
+            gridArray[y+1][y] = new colour, push x,y+1 to Q
+        if(point at y-1 invalid)
+            gridArray[y-1][y] = new colour, push x,y-1 to Q
+    return
+</code></pre>
+        <p>What I learnt:</p>
+        <ul>
+            <li>Depth-First Search and Breadth-First Search, stack and queue data structures, recursion.</li>
+        </ul>
+        <div class="imageAndCaption">
+          <iframe src="https://www.youtube.com/embed/S-DJcd-Mi3o" allow="fullscreen"></iframe>
+          <div class="caption">Video demonstration.</div>
+        </div>
+    </main>
+  </body>
+</html>

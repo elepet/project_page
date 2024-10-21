@@ -7,10 +7,10 @@
   </head>
   <body>
     <main>
-        <h1>SFML C++ 2D Physics</h1>
+        <h1>SFML C++ 2D Physics Simulator</h1>
         <hr>
         <div class="returnToHome"><a href="../index.html">Return to Home</a></div>
-        <div class="previousNext"><a href="page1.html">< Previous</a>&nbsp;&nbsp;&nbsp;<a href="page2.html">Next ></a></div>
+        <div class="previousNext"><a href="page1.html">< Previous</a>&nbsp;&nbsp;&nbsp;<a href="page3.html">Next ></a></div>
         <br>
         <p>For this project, I decided to try working at a lower level by coding a simple 2D physics engine from scratch. I found SFML (Simple Fast Multimedia Library), which is a library that provides functionality for opening windows, rendering images, handling events such as mouse clicks or keyboard inputs, and so on, which is what I needed. It is also based on C++, which I wanted to practise using.</p>
         <p>I started by rendering a circle and making it move in response to the arrow keys being pressed. It turns out that an object's speed can be simulated by multiplying the time elapsed since the start of a frame by a set value and updating the position each frame. Then, acceleration occurs when this value changes between frames. Given control over acceleration, you could simulate forces such as gravity and drag.</p>
@@ -18,7 +18,7 @@
         <p>I fixed this by introducing polar coordinates. The arrow key 'forces' would modify the velocity's cartesian coordinates, while drag would act on the magnitude of the velocity vector, regardless of which way it was directed. So one object would have two sets of coordinates that would update each other in response to these modifiers. I also added gravity, which just always accelerates the object down. The result may be seen in the video below.</p>
         <p>What I learnt:</p>
         <ul>
-            <li>SFML: linking libraries to projects, structure of SFML application (main loop, input handling, time handling, renderning), velocity/acceleration simulation.</li>
+            <li>SFML: linking libraries to projects with CMake, structure of SFML application (main loop, input handling, time handling, renderning), velocity/acceleration simulation.</li>
             <li>C++: cmath, using references.</li>
         </ul>
         <p>In the future, I would like to expand this engine to account for more factors such as collisions, friction, rotational stuff, maybe vibrations, etc. I would also like to make more use of C++'s classes to make my code more general and reusable.</p>
