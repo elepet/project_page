@@ -1,68 +1,68 @@
 body {
-    background-color:#b0e0e6;
-  }
-  h1 {
-    color: rgb(76, 57, 196);
-    margin: auto;
-    width: 50%;
-    padding: 5px;
-    font-size: 45px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 60px;  
-  }
-  p {
-    font-size: 20px;
-  }
-  li {
-    font-size: 20px;
-  }
-  a {
-    font-size: 20px;
-  }
-  marquee {
-    font-size: 22px;
-    font-weight: bold;
-    cursor: url('images/grab.png'), auto;
-  }
-  div.previousNext {
-    position: absolute;
-    top: 95px;
-    right: 10px;
-  }
-  div.returnToHome {
-    position: absolute;
-    top: 95px;
-    left: 10px;
-  }
-  div.imageAndCaption {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-  }
-  div.imageAndCaption img {
-    display: block;
-    margin: auto;
-    width: 600px;
-    height: 400px;
-  }
-  div.imageAndCaption iframe {
-    display: block;
-    margin: auto;
-    width: 600px;
-    height: 400px;
-  }
-  div.caption {
-    display: block;
-    padding-top: 2%;
-    text-align: center;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 14;
-  }
-  code {
-    background-color: #eee;
-    border: 1px solid #999;
-    display: block;
-    padding: 20px;
-  }
+  background-color:#b0e0e6;
+}
+h1 {
+  color: rgb(76, 57, 196);
+  margin: auto;
+  width: 50%;
+  padding: 5px;
+  font-size: 45px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 60px;  
+}
+p {
+  font-size: 20px;
+}
+li {
+  font-size: 20px;
+}
+a {
+  font-size: 20px;
+}
+marquee {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: url('images/grab.png'), auto;
+}
+div.previousNext {
+  position: absolute;
+  top: 95px;
+  right: 10px;
+}
+div.returnToHome {
+  position: absolute;
+  top: 95px;
+  left: 10px;
+}
+div.imageAndCaption {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+div.imageAndCaption img {
+  display: block;
+  margin: auto;
+  width: 600px;
+  height: 400px;
+}
+div.imageAndCaption iframe {
+  display: block;
+  margin: auto;
+  width: 600px;
+  height: 400px;
+}
+div.caption {
+  display: block;
+  padding-top: 2%;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 14;
+}
+code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 20px;
+}
