@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lev's Project Page</title>
+    <link rel="icon" type="image/x-icon" href="../images/movingFish.gif">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main>
+        <h1>Webots C++ Robot Controller</h1>
+        <hr>
+        <div class="returnToHome"><a href="../index.html">Return to Home</a></div>
+        <div class="previousNext"><a href="page4.html">< Previous</a>&nbsp;&nbsp;&nbsp;<a href="page5.html">Next ></a></div>
+        <br>
+        <div class="imageAndCaption">
+          <iframe src="https://www.youtube.com/embed/f4rAKEpECi4" allow="fullscreen"></iframe>
+          <div class="caption">Video demonstration of the robots performing the wall-following algorithm.</div>
+        </div>
+        <!--<div class="imageAndCaption">
+          <img src="../images/controlledRobot.png"/>
+          <div class="caption">Khepera IV: One of the simulated robots to be controlled.</div>
+        </div>-->
+        <p>What I learnt:</p>
+        <ul>
+            <li>C++: virtual functions, abstract classes, I/O, multifile OOP project architecture.</li>
+            <li>How to read technical documentation (Webots API in this case), how to control objects with GPS, lidar, and keyboard, how to construct algorithms.</li>
+        </ul>
+        <p>This was a university assignment but I included it here because it was interesting and I learnt a lot. The task was to write a controller for two robots in Webots (a simulation software) using C++, so that each would follow a wall until one of them reached a dead end. They would move along a tilemap and would have to stay within the square adjacent to the wall (where the walls would be along the edges of the tiles) or penalties would be applied. It was also required to print orientation/position information at each tile step to the console and into a separate file for each robot.</p>
+        <p>A large part of this assignment was the required object-oriented code architecture. This was made such that the wall following algorithm and general logic would be contained in an abstract class, with the pure virtual functions for the movement of each robot implemented in their respective derived classes. This was necessary since the robots had different physical parameters (e.g., one had two wheels while the other had four). Having to work around this structure really solidified my understanding of OOP design principles.</p>
+        <p>One interesting point was how I constructed the wall-following algorithm using a truth table and Karnaugh maps. I used the 'hand on wall rule', which is the idea that mazes can be solved by simply following a wall on one side. Given the walls would only be along tile edges, I was able to map each combination of surrounding walls to the necessary movement for the robot to continue to move along the wall to one side. I also reduced the possible movements to one-directional rotation and one-directional translation, which greatly simplified the code. Furthermore, since the robot would have to move by a tile step in any case, I would only have to differentiate the number of turns the robot makes each step. With all of this, the logic for the algorithm became simple enough to fit into a 16-row, 4-output truth table, as below.</p>
+        <div class="imageAndCaption">
+          <img src="../images/truthTableRobotController.png"/>
+          <div class="caption">The truth table containing the logic for the wall-following algorithm. The LHS is the presence of walls on each side, and the RHS is the number of left turns to make in each case.</div>
+        </div>
+        <p>I then used Karnaugh maps to get simplified boolean expressions for each output variable, resulting in a fairly succinct representation of the algorithm. Below is the actual code used in the simulation.</p>
+        <pre><code>if(atLeft&&!atFront){logicCounter=0;}
+if((!atLeft&&!atRight)||(atRight&&atBack)){logicCounter=1;}
+if((!atLeft&&atRight)&&!atBack){logicCounter=2;}
+if(atLeft&&atFront){logicCounter=3;}
+while(logicCounter>0){
+    moveRobot(Movement::STOP,Turn::LEFT);
+    logicCounter--;
+}
+moveRobot(Movement::FORWARDS,Turn::STRAIGHT); </code></pre>
+        <br>
+    </main>
+  </body>
+</html>

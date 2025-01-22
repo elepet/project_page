@@ -20,11 +20,6 @@ li {
 a {
   font-size: 20px;
 }
-marquee {
-  font-size: 22px;
-  font-weight: bold;
-  cursor: url('images/grab.png'), auto;
-}
 div.previousNext {
   position: absolute;
   top: 95px;
@@ -65,4 +60,11 @@ code {
   border: 1px solid #999;
   display: block;
   padding: 20px;
+}
+canvas {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
